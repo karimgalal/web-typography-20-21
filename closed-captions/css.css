@@ -8,7 +8,11 @@ Feel free to adjust the defaults to your needs.
 #closed-captions p {
 	opacity: 0;
 	transition: .05s;
-	position: absolute;
+	position: absolute; 
+	left: 0; 
+	right: 0; 
+	margin-left: auto; 
+	margin-right: auto;
 }
 #closed-captions .on {
 	opacity: 1;
@@ -103,14 +107,31 @@ Sounds.
 *********************************************  */
 
 /* The moment the class .sound1 is added to the body, the background is yellow */
-.sound1 {
+/* .sound1 {
 	background: yellow;
+} */
+
+/* iframe {
+	transition: 1s;
+} */
+
+/* The moment the class .sound1 is added to the body, the movie makes a turn */
+/* .sound1 iframe {
+	transform: rotate(1turn);
+} */
+
+body {
+	background: black;
+	text-align: center;
+	color: white;
+}
+
+p { 
+	text-align: center;
 }
 
 iframe {
-	transition: 1s;
-}
-/* The moment the class .sound1 is added to the body, the movie makes a turn */
-.sound1 iframe {
-	transform: rotate(1turn);
+	margin: 5% 0 2.5% 0 ;
+	height: 600px;
+	width: 1000px;
 }
