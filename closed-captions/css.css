@@ -5,42 +5,106 @@ Show them when they receive the class 'on'
 Hide them when they receive the class 'off'
 Feel free to adjust the defaults to your needs.
 ********************************************** */
+body { 
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+	background-image:url(background.jpg),
+	linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
+	background-blend-mode: overlay;
+	background-size: cover;
+/* background-repeat: no-repeat; */
+	text-align: center;
+	color: white;
+}
+
+
+
 #closed-captions p {
 	opacity: 0;
-	transition: .05s;
-	position: absolute; 
-	left: 0; 
-	right: 0; 
-	margin-left: auto; 
-	margin-right: auto;
+    transition: .05s;
+    position: absolute;
+	left: 50%;
+	width: 800px;
+	transform: translate(-50%);
+	padding: 12px;
 }
+
 #closed-captions .on {
 	opacity: 1;
+	
 }
 #closed-captions .off {
-	transition: .2s;
+	transition: .1s;
 	opacity: 0;
+
 }
+
+
 .voice1 {
+	font-family: "brenner slab";
+	width: 62%;
+    margin: 20px auto 0;
+    padding: 20px 100px;
 	/* font-style: italic; */
 }
+
+.voice1::before {
+	/* content: "Officer K: "; */
+	/* content: url(officerk.png); */
+	content: "";
+	background-image:url(robot.png);
+	background-size: 100% 100%;
+	display: inline-block;
+	vertical-align: middle;
+
+  /*size of your image*/
+	height: 50px;
+	width: 50px;
+  }
 
 .voice2 {
 	/* color: #FCB39D; */
 	color: #00FF00;
+	width: 62%;
+    margin: 20px auto 0;
+    padding: 20px 100px;
 }
+
+.voice2::before {
+	/* content: "Officer K: "; */
+	/* content: url(officerk.png); */
+	content: "";
+	background-image:url(officerk.png);
+	background-size: 100% 100%;
+	display: inline-block;
+	vertical-align: middle;
+
+  /*size of your image*/
+	height: 50px;
+	width: 50px;
+  }
+  
+
 
 .voice3 {
 	color: red;
 	text-transform: uppercase;
+	width: 62%;
+    margin: 20px auto 0;
+    padding: 20px 100px;
 }
 
 .voice4 {
-	color: #82eefd;
+	color: white;
+	width: 62%;
+    margin: 20px auto 0;
+    padding: 20px 100px;
 }
 
 p {
-	font-size: 2rem;
+	font-size: 1.5rem;
 }
 
 /* **********************************************
@@ -51,15 +115,25 @@ The first paragraph, with extended timing for
 	spoken.
 You probably want to change the styling.
 ********************************************** */
+
+		/* 0.05em 0.05em 0 rgba(238, 29, 82, 1),
+		-0.05em -0.05em 0 rgba(105, 201, 208, 1); */
+
 .p0 span {
 	opacity: 0;
 	font-family: brenner;
 }
+
+.p0 {
+	background-color: rgba(0, 0, 0, 0.8);
+	border: solid 1px #ffffff;
+	box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
 .p0.on span:first-of-type {
 	font-family: "brenner slab";
 	font-weight: 400;
 	opacity: 1;
-	transition: 0s;
 	text-shadow: 
 		0.05em 0.05em 0 rgba(238, 29, 82, 1),
 		-0.05em -0.05em 0 rgba(105, 201, 208, 1);
@@ -70,41 +144,48 @@ You probably want to change the styling.
 	color: #00FF00;
 	opacity: 1;
 	margin-right: -.25em;
+	text-shadow: 0 0 10px #00FF00;
 }
 .p0.on span:nth-of-type(3) {
 	font-weight: 800;
 	color: #00FF00;
 	opacity: 1;
 	margin-right: -.25em;
+	text-shadow: 0 0 10px #00FF00;
 }
 .p0.on span:nth-of-type(4) {
 	font-weight: 800;
 	color: #00FF00;
 	opacity: 1;
 	margin-right: -.25em;
+	text-shadow: 0 0 10px #00FF00;
 }
 .p0.on span:nth-of-type(5) {
 	font-weight: 800;
 	color: #00FF00;
 	opacity: 1;
 	margin-right: -.25em;
+	text-shadow: 0 0 10px #00FF00;
 }
 .p0.on span:nth-of-type(6) {
 	font-weight: 800;
 	color: #00FF00;
 	opacity: 1;
 	margin-right: -.25em;
+	text-shadow: 0 0 10px #00FF00;
 }
 .p0.on span:nth-of-type(7) {
 	font-weight: 800;
 	color: #00FF00;
 	opacity: 1;
 	margin-right: -.25em;
+	text-shadow: 0 0 10px #00FF00;
 }
 .p0.on span:nth-of-type(8) {
 	font-weight: 800;
 	color: #00FF00;
 	opacity: 1;
+	text-shadow: 0 0 10px #00FF00;
 }
 .p0.on span:nth-of-type(9) {
 	opacity: 1;
@@ -128,7 +209,67 @@ You probably want to change the styling.
 		-0.05em -0.05em 0 rgba(105, 201, 208, 1);
 }
 
+.p1.on {
+	background-color: rgba(0, 0, 0, 0.8);
+	border: solid 1px #00FF00;
+	box-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+	text-shadow: 0 0 10px #00FF00;
+}
+
 .p2.on {
+	background-color: rgba(0, 0, 0, 0.8);
+	border: solid 1px #ffffff;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+	text-shadow: 
+		0.05em 0.05em 0 rgba(238, 29, 82, 1),
+		-0.05em -0.05em 0 rgba(105, 201, 208, 1);
+}
+
+.p3.on {
+	background-color: rgba(0, 0, 0, 0.8);
+	border: solid 1px #00FF00;
+	box-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+	text-shadow: 0 0 10px #00FF00;
+}
+
+.p4.on {
+	background-color: rgba(0, 0, 0, 0.8);
+	border: solid 1px #00FF00;
+	box-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+	text-shadow: 0 0 10px #00FF00;
+}
+
+.p5.on {
+	background-color: rgba(0, 0, 0, 0.8);
+	border: solid 1px #00FF00;
+	box-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+	text-shadow: 0 0 10px #00FF00;
+}
+
+.p6.on {
+	background-color: rgba(0, 0, 0, 0.8);
+	border: solid 1px #ff0000;
+	box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+	text-shadow: 0 0 10px #ff0000;
+}
+
+.p7.on {
+	background-color: rgba(0, 0, 0, 0.8);
+	border: solid 1px #00FF00;
+	box-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+	text-shadow: 0 0 10px #00FF00;
+}
+
+/* .p30.on {
+	background-color: rgba(0, 0, 0, 0.5);
+	border: solid 1px #ffffff;
+	box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+} */
+
+.p8.on {
+	background-color: rgba(0, 0, 0, 0.8);
+	border: solid 1px #ffffff;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 	opacity: 1;
 	font-family: "brenner slab";
 	text-shadow: 
@@ -136,16 +277,17 @@ You probably want to change the styling.
 		-0.05em -0.05em 0 rgba(105, 201, 208, 1);
 }
 
-.p8.on {
-	opacity: 1;
-	font-family: "brenner slab";
-	text-shadow: 
-		0.05em 0.05em 0 rgba(238, 29, 82, 1),
-		-0.05em -0.05em 0 rgba(105, 201, 208, 1);
+.p9.on {
+	background-color: rgba(0, 0, 0, 0.8);
+	border: solid 1px #00FF00;
+	box-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+	text-shadow: 0 0 10px #00FF00;
 }
 
 .p10.on {
-	opacity: 1;
+	background-color: rgba(0, 0, 0, 0.8);
+	border: solid 1px #ffffff;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 	font-family: "brenner slab";
 	text-shadow: 
 		0.05em 0.05em 0 rgba(238, 29, 82, 1),
@@ -153,15 +295,26 @@ You probably want to change the styling.
 }
 
 .p11.on {
-	opacity: 1;
+	background-color: rgba(0, 0, 0, 0.8);
+	border: solid 1px #ffffff;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 	font-family: "brenner slab";
 	text-shadow: 
 		0.05em 0.05em 0 rgba(238, 29, 82, 1),
 		-0.05em -0.05em 0 rgba(105, 201, 208, 1);
 }
 
+.p12.on {
+	background-color: rgba(0, 0, 0, 0.8);
+	border: solid 1px #00FF00;
+	box-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+	text-shadow: 0 0 10px #00FF00;
+}
+
 .p13.on {
-	opacity: 1;
+	background-color: rgba(0, 0, 0, 0.8);
+	border: solid 1px #ffffff;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 	font-family: "brenner slab";
 	text-shadow: 
 		0.05em 0.05em 0 rgba(238, 29, 82, 1),
@@ -169,15 +322,26 @@ You probably want to change the styling.
 }
 
 .p14.on {
-	opacity: 1;
+	background-color: rgba(0, 0, 0, 0.8);
+	border: solid 1px #ffffff;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 	font-family: "brenner slab";
 	text-shadow: 
 		0.05em 0.05em 0 rgba(238, 29, 82, 1),
 		-0.05em -0.05em 0 rgba(105, 201, 208, 1);
 }
 
+.p15.on {
+	background-color: rgba(0, 0, 0, 0.8);
+	border: solid 1px #00FF00;
+	box-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+	text-shadow: 0 0 10px #00FF00;
+}
+
 .p16.on {
-	opacity: 1;
+	background-color: rgba(0, 0, 0, 0.8);
+	border: solid 1px #ffffff;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 	font-family: "brenner slab";
 	text-shadow: 
 		0.05em 0.05em 0 rgba(238, 29, 82, 1),
@@ -185,23 +349,43 @@ You probably want to change the styling.
 }
 
 .p17.on {
-	opacity: 1;
+	background-color: rgba(0, 0, 0, 0.8);
+	border: solid 1px #ffffff;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 	font-family: "brenner slab";
 	text-shadow: 
 		0.05em 0.05em 0 rgba(238, 29, 82, 1),
 		-0.05em -0.05em 0 rgba(105, 201, 208, 1);
+}
+
+.p18.on {
+	background-color: rgba(0, 0, 0, 0.8);
+	border: solid 1px #00FF00;
+	box-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+	text-shadow: 0 0 10px #00FF00;
 }
 
 .p19.on {
-	opacity: 1;
+	background-color: rgba(0, 0, 0, 0.8);
+	border: solid 1px #ffffff;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 	font-family: "brenner slab";
 	text-shadow: 
 		0.05em 0.05em 0 rgba(238, 29, 82, 1),
 		-0.05em -0.05em 0 rgba(105, 201, 208, 1);
 }
 
+.p20.on {
+	background-color: rgba(0, 0, 0, 0.8);
+	border: solid 1px #00FF00;
+	box-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+	text-shadow: 0 0 10px #00FF00;
+}
+
 .p21.on {
-	opacity: 1;
+	background-color: rgba(0, 0, 0, 0.8);
+	border: solid 1px #ffffff;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 	font-family: "brenner slab";
 	text-shadow: 
 		0.05em 0.05em 0 rgba(238, 29, 82, 1),
@@ -209,15 +393,26 @@ You probably want to change the styling.
 }
 
 .p22.on {
-	opacity: 1;
+	background-color: rgba(0, 0, 0, 0.8);
+	border: solid 1px #ffffff;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 	font-family: "brenner slab";
 	text-shadow: 
 		0.05em 0.05em 0 rgba(238, 29, 82, 1),
 		-0.05em -0.05em 0 rgba(105, 201, 208, 1);
 }
 
+.p23.on {
+	background-color: rgba(0, 0, 0, 0.8);
+	border: solid 1px #00FF00;
+	box-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+	text-shadow: 0 0 10px #00FF00;
+}
+
 .p24.on {
-	opacity: 1;
+	background-color: rgba(0, 0, 0, 0.8);
+	border: solid 1px #ffffff;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 	font-family: "brenner slab";
 	text-shadow: 
 		0.05em 0.05em 0 rgba(238, 29, 82, 1),
@@ -225,15 +420,26 @@ You probably want to change the styling.
 }
 
 .p25.on {
-	opacity: 1;
+	background-color: rgba(0, 0, 0, 0.8);
+	border: solid 1px #ffffff;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 	font-family: "brenner slab";
 	text-shadow: 
 		0.05em 0.05em 0 rgba(238, 29, 82, 1),
 		-0.05em -0.05em 0 rgba(105, 201, 208, 1);
 }
 
+.p26.on {
+	background-color: rgba(0, 0, 0, 0.8);
+	border: solid 1px #00FF00;
+	box-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+	text-shadow: 0 0 10px #00FF00;
+}
+
 .p27.on {
-	opacity: 1;
+	background-color: rgba(0, 0, 0, 0.8);
+	border: solid 1px #ffffff;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 	font-family: "brenner slab";
 	text-shadow: 
 		0.05em 0.05em 0 rgba(238, 29, 82, 1),
@@ -241,23 +447,43 @@ You probably want to change the styling.
 }
 
 .p28.on {
-	opacity: 1;
+	background-color: rgba(0, 0, 0, 0.8);
+	border: solid 1px #ffffff;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 	font-family: "brenner slab";
 	text-shadow: 
 		0.05em 0.05em 0 rgba(238, 29, 82, 1),
 		-0.05em -0.05em 0 rgba(105, 201, 208, 1);
+}
+
+.p29.on {
+	background-color: rgba(0, 0, 0, 0.8);
+	border: solid 1px #00FF00;
+	box-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+	text-shadow: 0 0 10px #00FF00;
 }
 
 .p30.on {
-	opacity: 1;
+	background-color: rgba(0, 0, 0, 0.8);
+	border: solid 1px #ffffff;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 	font-family: "brenner slab";
 	text-shadow: 
 		0.05em 0.05em 0 rgba(238, 29, 82, 1),
 		-0.05em -0.05em 0 rgba(105, 201, 208, 1);
 }
 
+.p31.on {
+	background-color: rgba(0, 0, 0, 0.8);
+	border: solid 1px #00FF00;
+	box-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+	text-shadow: 0 0 10px #00FF00;
+}
+
 .p32.on {
-	opacity: 1;
+	background-color: rgba(0, 0, 0, 0.8);
+	border: solid 1px #ffffff;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 	font-family: "brenner slab";
 	text-shadow: 
 		0.05em 0.05em 0 rgba(238, 29, 82, 1),
@@ -265,15 +491,26 @@ You probably want to change the styling.
 }
 
 .p33.on {
-	opacity: 1;
+	background-color: rgba(0, 0, 0, 0.8);
+	border: solid 1px #ffffff;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 	font-family: "brenner slab";
 	text-shadow: 
 		0.05em 0.05em 0 rgba(238, 29, 82, 1),
 		-0.05em -0.05em 0 rgba(105, 201, 208, 1);
 }
 
+.p34.on {
+	background-color: rgba(0, 0, 0, 0.8);
+	border: solid 1px #00FF00;
+	box-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+	text-shadow: 0 0 10px #00FF00;
+}
+
 .p35.on {
-	opacity: 1;
+	background-color: rgba(0, 0, 0, 0.8);
+	border: solid 1px #ffffff;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 	font-family: "brenner slab";
 	text-shadow: 
 		0.05em 0.05em 0 rgba(238, 29, 82, 1),
@@ -281,253 +518,1065 @@ You probably want to change the styling.
 }
 
 .p36.on {
-	opacity: 1;
+	background-color: rgba(0, 0, 0, 0.8);
+	border: solid 1px #ffffff;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 	font-family: "brenner slab";
 	text-shadow: 
 		0.05em 0.05em 0 rgba(238, 29, 82, 1),
 		-0.05em -0.05em 0 rgba(105, 201, 208, 1);
+}
+
+.p37.on {
+	background-color: rgba(0, 0, 0, 0.8);
+	border: solid 1px #00FF00;
+	box-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+	text-shadow: 0 0 10px #00FF00;
 }
 
 .p38.on {
-	opacity: 1;
+	background-color: rgba(0, 0, 0, 0.8);
+	border: solid 1px #ffffff;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 	font-family: "brenner slab";
 	text-shadow: 
 		0.05em 0.05em 0 rgba(238, 29, 82, 1),
 		-0.05em -0.05em 0 rgba(105, 201, 208, 1);
+}
+
+.p39.on {
+	background-color: rgba(0, 0, 0, 0.8);
+	border: solid 1px #00FF00;
+	box-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+	text-shadow: 0 0 10px #00FF00;
 }
 
 .p40.on {
-	opacity: 1;
+	background-color: rgba(0, 0, 0, 0.8);
+	border: solid 1px #ffffff;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 	font-family: "brenner slab";
 	text-shadow: 
 		0.05em 0.05em 0 rgba(238, 29, 82, 1),
 		-0.05em -0.05em 0 rgba(105, 201, 208, 1);
+}
+
+.p41.on {
+	background-color: rgba(0, 0, 0, 0.8);
+	border: solid 1px #00FF00;
+	box-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+	text-shadow: 0 0 10px #00FF00;
+}
+
+.p42.on {
+	background-color: rgba(0, 0, 0, 0.8);
+	border: solid 1px #00FF00;
+	box-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+	text-shadow: 0 0 10px #00FF00;
+}
+
+.p43.on {
+	background-color: rgba(0, 0, 0, 0.8);
+	border: solid 1px #00FF00;
+	box-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+	text-shadow: 0 0 10px #00FF00;
+}
+
+.p44.on {
+	background-color: rgba(0, 0, 0, 0.8);
+	border: solid 1px #ffffff;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.p45.on {
+	background-color: rgba(0, 0, 0, 0.8);
+	border: solid 1px #ffffff;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.p46.on {
+	background-color: rgba(0, 0, 0, 0.8);
+	border: solid 1px #ffffff;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.p47.on {
+	background-color: rgba(0, 0, 0, 0.8);
+	border: solid 1px #00FF00;
+	box-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+	text-shadow: 0 0 10px #00FF00;
 }
 
 .p48.on {
-	opacity: 1;
+	background-color: rgba(0, 0, 0, 0.8);
+	border: solid 1px #ffffff;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 	font-family: "brenner slab";
 	text-shadow: 
 		0.05em 0.05em 0 rgba(238, 29, 82, 1),
 		-0.05em -0.05em 0 rgba(105, 201, 208, 1);
 }
+
+.p48.on::before {
+	/* content: "Officer K: "; */
+	/* content: url(officerk.png); */
+	content: "";
+	background-image:url(robot.png);
+	background-size: 100% 100%;
+	display: inline-block;
+	vertical-align: middle;
+	
+  /*size of your image*/
+	height: 50px;
+	width: 50px;
+
+	
+  }
 
 .p49.on {
-	color: #00FF00;
+	color: #FF8C00;
+	background-color: rgba(0, 0, 0, 0.8);
+	border: solid 1px #FF8C00;
+	box-shadow: 0 0 5px rgba(255,140,0, 0.5);
+	text-shadow: 0 0 10px #FF8C00;
 }
+
+.p49.on::before {
+	/* content: "Officer K: "; */
+	/* content: url(officerk.png); */
+	content: "";
+	background-image:url(officerk.png);
+	background-size: 100% 100%;
+	display: inline-block;
+	vertical-align: middle;
+	
+  /*size of your image*/
+	height: 50px;
+	width: 50px;
+
+	
+  }
 
 .p50.on {
-	opacity: 1;
+	background-color: rgba(0, 0, 0, 0.8);
+	border: solid 1px #ffffff;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 	font-family: "brenner slab";
 	text-shadow: 
 		0.05em 0.05em 0 rgba(238, 29, 82, 1),
 		-0.05em -0.05em 0 rgba(105, 201, 208, 1);
 }
+
+.p50.on::before {
+	/* content: "Officer K: "; */
+	/* content: url(officerk.png); */
+	content: "";
+	background-image:url(robot.png);
+	background-size: 100% 100%;
+	display: inline-block;
+	vertical-align: middle;
+	
+  /*size of your image*/
+	height: 50px;
+	width: 50px;
+
+	
+  }
 
 .p51.on {
-	color: #2E7F18;
+	color: #FF8C00;
+	background-color: rgba(0, 0, 0, 0.8);
+	border: solid 1px #FF8C00;
+	box-shadow: 0 0 5px rgba(255,140,0, 0.5);
+	text-shadow: 0 0 10px #FF8C00;
 }
 
+.p51.on::before {
+	/* content: "Officer K: "; */
+	/* content: url(officerk.png); */
+	content: "";
+	background-image:url(officerk.png);
+	background-size: 100% 100%;
+	display: inline-block;
+	vertical-align: middle;
+	
+  /*size of your image*/
+	height: 50px;
+	width: 50px;
+
+	
+  }
+
 .p52.on {
-	opacity: 1;
+	background-color: rgba(0, 0, 0, 0.8);
+	border: solid 1px #ffffff;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 	font-family: "brenner slab";
 	text-shadow: 
 		0.05em 0.05em 0 rgba(238, 29, 82, 1),
 		-0.05em -0.05em 0 rgba(105, 201, 208, 1);
 }
 
+.p52.on::before {
+	/* content: "Officer K: "; */
+	/* content: url(officerk.png); */
+	content: "";
+	background-image:url(robot.png);
+	background-size: 100% 100%;
+	display: inline-block;
+	vertical-align: middle;
+	
+  /*size of your image*/
+	height: 50px;
+	width: 50px;
+
+	
+  }
+
 .p53.on {
-	color: #45731E;
+	color: #FF8C00;
+	background-color: rgba(0, 0, 0, 0.8);
+	border: solid 1px #FF8C00;
+	box-shadow: 0 0 5px rgba(255,140,0, 0.5);
+	text-shadow: 0 0 10px #FF8C00;
 }
+
+.p53.on::before {
+	/* content: "Officer K: "; */
+	/* content: url(officerk.png); */
+	content: "";
+	background-image:url(officerk.png);
+	background-size: 100% 100%;
+	display: inline-block;
+	vertical-align: middle;
+	
+  /*size of your image*/
+	height: 50px;
+	width: 50px;
+
+	
+  }
 
 
 .p54.on {
-	opacity: 1;
+	background-color: rgba(0, 0, 0, 0.8);
+	border: solid 1px #ffffff;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 	font-family: "brenner slab";
 	text-shadow: 
 		0.05em 0.05em 0 rgba(238, 29, 82, 1),
 		-0.05em -0.05em 0 rgba(105, 201, 208, 1);
 }
+
+.p54.on::before {
+	/* content: "Officer K: "; */
+	/* content: url(officerk.png); */
+	content: "";
+	background-image:url(robot.png);
+	background-size: 100% 100%;
+	display: inline-block;
+	vertical-align: middle;
+	
+  /*size of your image*/
+	height: 50px;
+	width: 50px;
+
+	
+  }
 
 .p55.on {
-	opacity: 1;
+	background-color: rgba(0, 0, 0, 0.8);
+	border: solid 1px #ffffff;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 	font-family: "brenner slab";
 	text-shadow: 
 		0.05em 0.05em 0 rgba(238, 29, 82, 1),
 		-0.05em -0.05em 0 rgba(105, 201, 208, 1);
 }
+
+.p55.on::before {
+	/* content: "Officer K: "; */
+	/* content: url(officerk.png); */
+	content: "";
+	background-image:url(robot.png);
+	background-size: 100% 100%;
+	display: inline-block;
+	vertical-align: middle;
+	
+  /*size of your image*/
+	height: 50px;
+	width: 50px;
+
+	
+  }
 
 .p56.on {
-	color: #675E24;
+	color: #ff0000;
+	background-color: rgba(0, 0, 0, 0.8);
+	border: solid 1px #ff0000;
+	box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+	text-shadow: 0 0 10px #ff0000;
 }
+
+.p56.on::before {
+	/* content: "Officer K: "; */
+	/* content: url(officerk.png); */
+	content: "";
+	background-image:url(officerk.png);
+	background-size: 100% 100%;
+	display: inline-block;
+	vertical-align: middle;
+	
+  /*size of your image*/
+	height: 50px;
+	width: 50px;
+
+	
+  }
 
 .p57.on {
-	opacity: 1;
+	background-color: rgba(0, 0, 0, 0.8);
+	border: solid 1px #ffffff;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 	font-family: "brenner slab";
 	text-shadow: 
 		0.05em 0.05em 0 rgba(238, 29, 82, 1),
 		-0.05em -0.05em 0 rgba(105, 201, 208, 1);
 }
+
+.p57.on::before {
+	/* content: "Officer K: "; */
+	/* content: url(officerk.png); */
+	content: "";
+	background-image:url(robot.png);
+	background-size: 100% 100%;
+	display: inline-block;
+	vertical-align: middle;
+	
+  /*size of your image*/
+	height: 50px;
+	width: 50px;
+
+	
+  }
 
 .p58.on {
-	color: #675E24;
+	color: #ff0000;
+	background-color: rgba(0, 0, 0, 0.8);
+	border: solid 1px #ff0000;
+	box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+	text-shadow: 0 0 10px #ff0000;
 }
+
+.p58.on::before {
+	/* content: "Officer K: "; */
+	/* content: url(officerk.png); */
+	content: "";
+	background-image:url(officerk.png);
+	background-size: 100% 100%;
+	display: inline-block;
+	vertical-align: middle;
+	
+  /*size of your image*/
+	height: 50px;
+	width: 50px;
+
+	
+  }
 
 .p59.on {
-	opacity: 1;
+	background-color: rgba(0, 0, 0, 0.8);
+	border: solid 1px #ffffff;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 	font-family: "brenner slab";
 	text-shadow: 
 		0.05em 0.05em 0 rgba(238, 29, 82, 1),
 		-0.05em -0.05em 0 rgba(105, 201, 208, 1);
 }
+
+.p59.on::before {
+	/* content: "Officer K: "; */
+	/* content: url(officerk.png); */
+	content: "";
+	background-image:url(robot.png);
+	background-size: 100% 100%;
+	display: inline-block;
+	vertical-align: middle;
+	
+  /*size of your image*/
+	height: 50px;
+	width: 50px;
+
+	
+  }
 
 .p60.on {
-	color: #8D472B;
+	color: #ff0000;
+	background-color: rgba(0, 0, 0, 0.8);
+	border: solid 1px #ff0000;
+	box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+	text-shadow: 0 0 10px #ff0000;
 }
+
+.p60.on::before {
+	/* content: "Officer K: "; */
+	/* content: url(officerk.png); */
+	content: "";
+	background-image:url(officerk.png);
+	background-size: 100% 100%;
+	display: inline-block;
+	vertical-align: middle;
+	
+  /*size of your image*/
+	height: 50px;
+	width: 50px;
+
+	
+  }
 
 .p61.on {
-	opacity: 1;
+	background-color: rgba(0, 0, 0, 0.8);
+	border: solid 1px #ffffff;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 	font-family: "brenner slab";
 	text-shadow: 
 		0.05em 0.05em 0 rgba(238, 29, 82, 1),
 		-0.05em -0.05em 0 rgba(105, 201, 208, 1);
 }
+
+.p61.on::before {
+	/* content: "Officer K: "; */
+	/* content: url(officerk.png); */
+	content: "";
+	background-image:url(robot.png);
+	background-size: 100% 100%;
+	display: inline-block;
+	vertical-align: middle;
+	
+  /*size of your image*/
+	height: 50px;
+	width: 50px;
+
+	
+  }
 
 .p62.on {
-	color: #8D472B;
+	color: #ff0000;
+	background-color: rgba(0, 0, 0, 0.8);
+	border: solid 1px #ff0000;
+	box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+	text-shadow: 0 0 10px #ff0000;
 }
+
+.p62.on::before {
+	/* content: "Officer K: "; */
+	/* content: url(officerk.png); */
+	content: "";
+	background-image:url(officerk.png);
+	background-size: 100% 100%;
+	display: inline-block;
+	vertical-align: middle;
+	
+  /*size of your image*/
+	height: 50px;
+	width: 50px;
+
+	
+  }
 
 .p63.on {
-	opacity: 1;
+	background-color: rgba(0, 0, 0, 0.8);
+	border: solid 1px #ffffff;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 	font-family: "brenner slab";
 	text-shadow: 
 		0.05em 0.05em 0 rgba(238, 29, 82, 1),
 		-0.05em -0.05em 0 rgba(105, 201, 208, 1);
 }
+
+.p63.on::before {
+	/* content: "Officer K: "; */
+	/* content: url(officerk.png); */
+	content: "";
+	background-image:url(robot.png);
+	background-size: 100% 100%;
+	display: inline-block;
+	vertical-align: middle;
+	
+  /*size of your image*/
+	height: 50px;
+	width: 50px;
+	
+  }
 
 .p64.on {
-	color: #B13433;
+	color: #ff0000;
+	background-color: rgba(0, 0, 0, 0.8);
+	border: solid 1px #ff0000;
+	box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+	text-shadow: 0 0 10px #ff0000;
 }
+
+.p64.on::before {
+	/* content: "Officer K: "; */
+	/* content: url(officerk.png); */
+	content: "";
+	background-image:url(officerk.png);
+	background-size: 100% 100%;
+	display: inline-block;
+	vertical-align: middle;
+	
+  /*size of your image*/
+	height: 50px;
+	width: 50px;
+
+	
+  }
 
 .p65.on {
-	opacity: 1;
+	background-color: rgba(0, 0, 0, 0.8);
+	border: solid 1px #ffffff;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 	font-family: "brenner slab";
 	text-shadow: 
 		0.05em 0.05em 0 rgba(238, 29, 82, 1),
 		-0.05em -0.05em 0 rgba(105, 201, 208, 1);
 }
+
+.p65.on::before {
+	/* content: "Officer K: "; */
+	/* content: url(officerk.png); */
+	content: "";
+	background-image:url(robot.png);
+	background-size: 100% 100%;
+	display: inline-block;
+	vertical-align: middle;
+	
+  /*size of your image*/
+	height: 50px;
+	width: 50px;
+
+	
+  }
 
 .p66.on {
-	color: #B13433;
+	color: #ff0000;
+	background-color: rgba(0, 0, 0, 0.8);
+	border: solid 1px #ff0000;
+	box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+	text-shadow: 0 0 10px #ff0000;
 }
+
+.p66.on::before {
+	/* content: "Officer K: "; */
+	/* content: url(officerk.png); */
+	content: "";
+	background-image:url(officerk.png);
+	background-size: 100% 100%;
+	display: inline-block;
+	vertical-align: middle;
+	
+  /*size of your image*/
+	height: 50px;
+	width: 50px;
+
+	
+  }
 
 .p67.on {
-	opacity: 1;
+	background-color: rgba(0, 0, 0, 0.8);
+	border: solid 1px #ffffff;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 	font-family: "brenner slab";
 	text-shadow: 
 		0.05em 0.05em 0 rgba(238, 29, 82, 1),
 		-0.05em -0.05em 0 rgba(105, 201, 208, 1);
 }
+
+.p67.on::before {
+	/* content: "Officer K: "; */
+	/* content: url(officerk.png); */
+	content: "";
+	background-image:url(robot.png);
+	background-size: 100% 100%;
+	display: inline-block;
+	vertical-align: middle;
+	
+  /*size of your image*/
+	height: 50px;
+	width: 50px;
+
+	
+  }
 
 .p68.on {
-	color: #B13433;
+	color: #ff0000;
+	background-color: rgba(0, 0, 0, 0.8);
+	border: solid 1px #ff0000;
+	box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+	text-shadow: 0 0 10px #ff0000;
 }
+
+.p68.on::before {
+	/* content: "Officer K: "; */
+	/* content: url(officerk.png); */
+	content: "";
+	background-image:url(officerk.png);
+	background-size: 100% 100%;
+	display: inline-block;
+	vertical-align: middle;
+	
+  /*size of your image*/
+	height: 50px;
+	width: 50px;
+
+	
+  }
 
 .p69.on {
-	opacity: 1;
+	background-color: rgba(0, 0, 0, 0.8);
+	border: solid 1px #ffffff;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 	font-family: "brenner slab";
 	text-shadow: 
 		0.05em 0.05em 0 rgba(238, 29, 82, 1),
 		-0.05em -0.05em 0 rgba(105, 201, 208, 1);
 }
+
+.p69.on::before {
+	/* content: "Officer K: "; */
+	/* content: url(officerk.png); */
+	content: "";
+	background-image:url(robot.png);
+	background-size: 100% 100%;
+	display: inline-block;
+	vertical-align: middle;
+	
+  /*size of your image*/
+	height: 50px;
+	width: 50px;
+
+	
+  }
 
 .p70.on {
-	color: #C82538;
+	color: #ff0000;
+	background-color: rgba(0, 0, 0, 0.8);
+	border: solid 1px #ff0000;
+	box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+	text-shadow: 0 0 10px #ff0000;
 }
 
+.p70.on::before {
+	/* content: "Officer K: "; */
+	/* content: url(officerk.png); */
+	content: "";
+	background-image:url(officerk.png);
+	background-size: 100% 100%;
+	display: inline-block;
+	vertical-align: middle;
+	
+  /*size of your image*/
+	height: 50px;
+	width: 50px;
+
+	
+  }
+
 .p71.on {
-	opacity: 1;
+	background-color: rgba(0, 0, 0, 0.8);
+	border: solid 1px #ffffff;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 	font-family: "brenner slab";
 	text-shadow: 
 		0.05em 0.05em 0 rgba(238, 29, 82, 1),
 		-0.05em -0.05em 0 rgba(105, 201, 208, 1);
 }
+
+.p71.on::before {
+	/* content: "Officer K: "; */
+	/* content: url(officerk.png); */
+	content: "";
+	background-image:url(robot.png);
+	background-size: 100% 100%;
+	display: inline-block;
+	vertical-align: middle;
+	
+  /*size of your image*/
+	height: 50px;
+	width: 50px;
+
+	
+  }
 
 .p72.on {
 	color: #ff0000;
+	background-color: rgba(0, 0, 0, 0.8);
+	border: solid 1px #ff0000;
+	box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+	text-shadow: 0 0 10px #ff0000;
 }
 
+.p72.on::before {
+	/* content: "Officer K: "; */
+	/* content: url(officerk.png); */
+	content: "";
+	background-image:url(officerk.png);
+	background-size: 100% 100%;
+	display: inline-block;
+	vertical-align: middle;
+	
+  /*size of your image*/
+	height: 50px;
+	width: 50px;
+
+	
+  }
+
 .p73.on {
-	opacity: 1;
+	background-color: rgba(0, 0, 0, 0.8);
+	border: solid 1px #ffffff;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 	font-family: "brenner slab";
 	text-shadow: 
 		0.05em 0.05em 0 rgba(238, 29, 82, 1),
 		-0.05em -0.05em 0 rgba(105, 201, 208, 1);
 }
+
+.p73.on::before {
+	/* content: "Officer K: "; */
+	/* content: url(officerk.png); */
+	content: "";
+	background-image:url(robot.png);
+	background-size: 100% 100%;
+	display: inline-block;
+	vertical-align: middle;
+	
+  /*size of your image*/
+	height: 50px;
+	width: 50px;
+
+	
+  }
 
 .p74.on {
 	color: #ff0000;
+	background-color: rgba(0, 0, 0, 0.8);
+	border: solid 1px #ff0000;
+	box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+	text-shadow: 0 0 10px #ff0000;
 }
 
+.p74.on::before {
+	/* content: "Officer K: "; */
+	/* content: url(officerk.png); */
+	content: "";
+	background-image:url(officerk.png);
+	background-size: 100% 100%;
+	display: inline-block;
+	vertical-align: middle;
+	
+  /*size of your image*/
+	height: 50px;
+	width: 50px;
+
+	
+  }
+
 .p75.on {
-	opacity: 1;
+	background-color: rgba(0, 0, 0, 0.8);
+	border: solid 1px #ffffff;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 	font-family: "brenner slab";
 	text-shadow: 
 		0.05em 0.05em 0 rgba(238, 29, 82, 1),
 		-0.05em -0.05em 0 rgba(105, 201, 208, 1);
 }
+
+.p75.on::before {
+	/* content: "Officer K: "; */
+	/* content: url(officerk.png); */
+	content: "";
+	background-image:url(robot.png);
+	background-size: 100% 100%;
+	display: inline-block;
+	vertical-align: middle;
+	
+  /*size of your image*/
+	height: 50px;
+	width: 50px;
+
+	
+  }
 
 .p76.on {
 	color: #ff0000;
+	background-color: rgba(0, 0, 0, 0.8);
+	border: solid 1px #ff0000;
+	box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+	text-shadow: 0 0 10px #ff0000;
 }
 
+.p76.on::before {
+	/* content: "Officer K: "; */
+	/* content: url(officerk.png); */
+	content: "";
+	background-image:url(officerk.png);
+	background-size: 100% 100%;
+	display: inline-block;
+	vertical-align: middle;
+	
+  /*size of your image*/
+	height: 50px;
+	width: 50px;
+
+	
+  }
+
 .p77.on {
-	opacity: 1;
+	background-color: rgba(0, 0, 0, 0.8);
+	border: solid 1px #ffffff;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 	font-family: "brenner slab";
 	text-shadow: 
 		0.05em 0.05em 0 rgba(238, 29, 82, 1),
 		-0.05em -0.05em 0 rgba(105, 201, 208, 1);
 }
+
+.p77.on::before {
+	/* content: "Officer K: "; */
+	/* content: url(officerk.png); */
+	content: "";
+	background-image:url(robot.png);
+	background-size: 100% 100%;
+	display: inline-block;
+	vertical-align: middle;
+	
+  /*size of your image*/
+	height: 50px;
+	width: 50px;
+
+	
+  }
 
 .p78.on {
 	color: #ff0000;
+	background-color: rgba(0, 0, 0, 0.8);
+	border: solid 1px #ff0000;
+	box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+	text-shadow: 0 0 10px #ff0000;
 }
 
+.p78.on::before {
+	/* content: "Officer K: "; */
+	/* content: url(officerk.png); */
+	content: "";
+	background-image:url(officerk.png);
+	background-size: 100% 100%;
+	display: inline-block;
+	vertical-align: middle;
+
+  /*size of your image*/
+	height: 50px;
+	width: 50px;
+  }
+
 .p79.on {
-	opacity: 1;
+	background-color: rgba(0, 0, 0, 0.8);
+	border: solid 1px #ffffff;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 	font-family: "brenner slab";
-	text-transform: uppercase;
 	text-shadow: 
 		0.05em 0.05em 0 rgba(238, 29, 82, 1),
 		-0.05em -0.05em 0 rgba(105, 201, 208, 1);
 }
 
-body {
-	background: black;
-	text-align: center;
-	color: white;
-}
+.p79.on::before {
+	/* content: "Officer K: "; */
+	/* content: url(officerk.png); */
+	content: "";
+	background-image:url(robot.png);
+	background-size: 100% 100%;
+	display: inline-block;
+	vertical-align: middle;
+
+  /*size of your image*/
+	height: 50px;
+	width: 50px;
+  }
+
+
+
 
 p { 
 	text-align: center;
 }
 
 iframe {
+	transition: 1s;
 	margin: 5% 0 1% 0 ;
 	height: 600px;
 	width: 1000px;
 }
 
-.sound0 {
-	color: #fff;
-	padding: 10px;
-	border-radius: 5px;
-	animation: blinkingBackground 1s;
+
+/* .sound1 {
+	background-image:url(background.jpg),
+	linear-gradient(rgba(0,0,0,.1),rgba(0,0,0,0.1));
+    background-blend-mode: overlay;
+}
+
+.sound2 {
+	background-image:url(background.jpg),
+	linear-gradient(rgba(0,0,0,.1),rgba(0,0,0,0.1));
+    background-blend-mode: overlay;
+	animation: blinkingBackground .5s;
 }
 @keyframes blinkingBackground{
 	0%		{ background-color: #000000;}
 	25%		{ background-color: #1d1d1d;}
 	50%		{ background-color: #000000;}
 	75%		{ background-color: #1d1d1d;}
-	100%	{ background-color: #000000;}
+	100%	{ background-color: #000000;} 
+	
+}*/
+
+/*
+ .sound0 {
+	animation: example;
+	animation-duration: 4s;
+}
+
+@keyframes example {
+	0%   {background-color: #8b0000;}
+	25%  {background-color: (rgba(0,0,0,1);}
+	50%  {background-color: #8b0000;}
+	75%  {background-color: (rgba(0,0,0,1);}
+	100% {background-image:url(background.jpg);}
+	
+} */
+
+.sound0 {
+	background-image:url(background.jpg),
+	linear-gradient(rgba(0,0,0,.1),rgba(0,0,0,0.1));
+    background-blend-mode: overlay;
+	animation: blinkingBackground .5s;
+}
+@keyframes blinkingBackground{
+	0%		{ background-color: #000000;}
+	25%		{ background-color: hsl(0, 100%, 34%);}
+	50%		{ background-color: #000000;}
+	75%		{ background-color: hsl(0, 100%, 34%);}
+	100%	{ background-color: #000000;} 
+}
+
+.sound1 iframe {
+	animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+	transform: translate3d(0, 0, 0);
+	backface-visibility: hidden;
+	perspective: 1000px;
+}
+
+@keyframes shake {
+	10%, 90% {
+	  transform: translate3d(-10px, 0, 0);
+	}
+	
+	20%, 80% {
+	  transform: translate3d(20px, 0, 0);
+	}
+  
+	30%, 50%, 70% {
+	  transform: translate3d(-40px, 0, 0);
+	}
+  
+	40%, 60% {
+	  transform: translate3d(40px, 0, 0);
+	}
+  }
+
+  .sound2 iframe {
+	animation: shake2 0.82s cubic-bezier(.36,.07,.19,.97) both;
+	transform: translate3d(0, 0, 0);
+	backface-visibility: hidden;
+	perspective: 1000px;
+}
+
+@keyframes shake2 {
+	10%, 90% {
+	  transform: translate3d(-10px, 0, 0);
+	}
+	
+	20%, 80% {
+	  transform: translate3d(20px, 0, 0);
+	}
+  
+	30%, 50%, 70% {
+	  transform: translate3d(-40px, 0, 0);
+	}
+  
+	40%, 60% {
+	  transform: translate3d(40px, 0, 0);
+	}
+  }
+
+  .sound4 iframe {
+	animation: shake4 0.82s cubic-bezier(.36,.07,.19,.97) both;
+	transform: translate3d(0, 0, 0);
+	backface-visibility: hidden;
+	perspective: 1000px;
+}
+
+@keyframes shake4 {
+	10%, 90% {
+	  transform: translate3d(-0, -10px, 0);
+	}
+	
+	20%, 80% {
+	  transform: translate3d(0, 20px, 0);
+	}
+  
+	30%, 50%, 70% {
+	  transform: translate3d(-0, -40px, 0);
+	}
+  
+	40%, 60% {
+	  transform: translate3d(0, 40px, 0);
+	}
+  }
+
+ 
+
+  .sound9 iframe{
+	animation: shakerino 0.5s;
+	animation-iteration-count: 83;	 
+}
+
+  @keyframes shakerino {
+	0% { transform: translate(1px, 1px) rotate(0deg); }
+	10% { transform: translate(-1px, -2px) rotate(-2deg); }
+	20% { transform: translate(-3px, 0px) rotate(2deg); }
+	30% { transform: translate(3px, 2px) rotate(0deg); }
+	40% { transform: translate(1px, -1px) rotate(2deg); }
+	50% { transform: translate(-1px, 2px) rotate(-2deg); }
+	60% { transform: translate(-3px, 1px) rotate(0deg); }
+	70% { transform: translate(3px, 1px) rotate(-2deg); }
+	80% { transform: translate(-1px, -1px) rotate(2deg); }
+	90% { transform: translate(1px, 2px) rotate(0deg); }
+	100% { transform: translate(1px, -2px) rotate(-2deg); }
+  }
+
+
+  .sound10 {
+	background-image:url(background.jpg),
+	linear-gradient(rgba(0,0,0,.1),rgba(0,0,0,0.1));
+    background-blend-mode: overlay;
+	animation: blinkingBackground2 .5s;
+}
+@keyframes blinkingBackground2{
+	0%		{ background-color: #000000;}
+	25%		{ background-color: hsl(0, 100%, 34%);}
+	50%		{ background-color: #000000;}
+	75%		{ background-color: hsl(0, 100%, 34%);}
+	100%	{ background-color: #000000;} 
 }
